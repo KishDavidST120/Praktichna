@@ -16,8 +16,7 @@
 </template>
 
 <script>
-
-import {myMixin} from './mixins.js'
+import {myMixin} from '@/mixins.js';
 export default {
   name: 'dashboard',
   mixins: [myMixin],
