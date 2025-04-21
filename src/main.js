@@ -1,9 +1,6 @@
-import { createApp } from 'vue';
-import App from './startAuth.vue';
-import router from '@/router/routers.js';
-import store from "@/authentification/authIndex.js";
+import './assets/main.css'
 
-createApp(App)
-    .use(router)
-    .use(store)
-    .mount('#app');
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')

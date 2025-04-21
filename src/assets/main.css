@@ -1,35 +1,194 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-weight: normal;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotate-image {
+    width: 100%;
+    height: auto;
+    animation: rotateAnimation 1.5s linear;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Початкова позиція */
+    }
+    100% {
+        transform: rotate(360deg); /* Кінцева позиція */
+    }
 }
 
 a,
 .green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+    text-decoration: none;
+    color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+    padding: 3px;
 }
 
 @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+    a:hover {
+        background-color: hsla(160, 100%, 37%, 0.2);
+    }
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+    body {
+        margin: auto;
+        display: flex;
+    }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+
+    #app {
+        margin: auto;
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 2rem;
+    }
+}
+
+.calculator-container {
+    max-width: 700px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.calculator-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #2c3e50;
+    animation: flipDown 2s ease-in-out forwards;
+    transform-origin: top center; /* Початок обертання — верх тексту */
+}
+@keyframes flipDown {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.period-input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group label {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.field-group input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+.add-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+}
+
+.add-btn:hover {
+    background-color: #2980b9;
+}
+
+.actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.calc-btn {
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.calc-btn:hover {
+    background-color: #27ae60;
+}
+
+.result-box {
+    background-color: #e8f8f5;
+    border-left: 6px solid #2ecc71;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.error-box {
+    background-color: #fdecea;
+    border-left: 6px solid #e74c3c;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #c0392b;
+    margin-bottom: 16px;
+}
+select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
 }
